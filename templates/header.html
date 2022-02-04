@@ -1,0 +1,48 @@
+{% load static %}
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <img src="/media/logo.png" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a data-link='home' href="{% url 'core:home' %}">Home</a></li>
+                        <li class="scroll-to-section"><a  data-link='about' href="{% url 'core:about' %}">About Us</a></li>
+                        <li class="scroll-to-section"><a data-link='products'  href="{% url 'core:products' %}">Products</a></li>
+                        <li  class="scroll-to-section"><a data-link='cart' href="{% url 'core:cart' %}">cart</a></li>
+                        <li class="scroll-to-section"><a data-link='contact' href="{% url 'core:contact' %}">contact</a></li>
+                        
+                        <li class="scroll-to-section"><a href="{% url 'core:home' %}#explore">Explore</a></li>
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        const current_url = '{{request.resolver_match.url_name}}'
+        const nav_link = document.querySelectorAll('.nav li a')
+
+        nav_link.forEach(element =>{
+            if (element.getAttribute('data-link') == current_url){
+                element.classList.add('active')
+            }
+
+        })
+  
+  
+      </script>
+  
+</header>
+<!-- ***** Header Area End ***** -->

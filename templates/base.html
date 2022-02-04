@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    {% block title %}
+        <title>Hexashop Ecommerce HTML CSS Template</title>
+    {% endblock title %}
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/hexashop.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %} ">
+    </head>
+    
+    <body>
+
+
+
+
+
+    
+     <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** --> 
+    
+    
+    {% include 'header.html' %}
+
+
+    {% block content %}
+        
+    {% endblock content %}
+
+    {% include 'footer.html' %}
+
+    <script  src='{% static "js/jquery.min.js" %}'></script>
+    <script src='{% static "js/owl.carousel.js" %}' ></script>
+    <script src='{% static "js/custom.js" %}' ></script>
+
+    {% block scripts %}
+
+
+    
+    {% endblock scripts %}
+
+
+  </body>
+</html>
