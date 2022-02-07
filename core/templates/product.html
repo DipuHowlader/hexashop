@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Single Product Page</h2>
+                        <h2>Product Page</h2>
                         <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
                     </div>
                 </div>
@@ -56,8 +56,14 @@
                         </div>
                     </div>
                     <div class="total">
-                        <h4>Total: $210.00</h4>
-                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                        <h4>Total: ${{product.price}}</h4>
+                        <form method="post">
+                            {% csrf_token %}
+                                <input type="hidden" value="add_to_cart" name="form_type" >
+                                <input type="hidden" value="1" name='quantity'>
+                                <input type="hidden" value="{{product.id}}" name='product'>
+                                <button type='submit' class="main-border-button"><a >Add To Cart</a></button>
+                        </form>
                     </div>
                 </div>
             </div>

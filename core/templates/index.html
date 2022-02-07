@@ -18,7 +18,7 @@
                                 <a href="#">Purchase Now!</a>
                             </div>
                         </div>
-                        <img src="media/left-banner-image.jpg" alt="">
+                        <img src="/media/left-banner-image.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="media/baner-right-image-01.jpg">
+                                    <img src="/media/baner-right-image-01.jpg">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="media/baner-right-image-02.jpg">
+                                    <img src="/media/baner-right-image-02.jpg">
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="media/baner-right-image-03.jpg">
+                                    <img src="/media/baner-right-image-03.jpg">
                                 </div>
                             </div>
                         </div>
@@ -113,14 +113,13 @@
 </div>
 <!-- ***** Main Banner Area End ***** -->
 
-<!-- ***** Men Area Starts ***** -->
-<section class="section" id="men">
+<!-- ***** might Like ***** -->
+<section class="section category" id="might_like">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Men's Latest</h2>
-                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                    <h2>You Might Like These</h2>
                 </div>
             </div>
         </div>
@@ -129,10 +128,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="men-item-carousel">
-                    <div class="owl-men-item owl-carousel">
+                    <div class="owl-item owl-carousel">
 
                         {% for product  in products %}
-                        {% if product.catagory == 'men' %}
+                        {% if product.category.title == 'men' and product.is_lattest %}
                             <div class="item">
                                     <div class="thumb">
                                         <div class="hover-content">
@@ -171,16 +170,15 @@
         </div>
     </div>
 </section>
-<!-- ***** Men Area Ends ***** -->
+<!-- ***** might Like Ends ***** -->
 
-<!-- ***** Women Area Starts ***** -->
-<section class="section" id="women">
+<!-- ***** just arrive ***** -->
+<section class="section category" id="just_arrived">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Women's Latest</h2>
-                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                    <h2>Just Arrived</h2>
                 </div>
             </div>
         </div>
@@ -188,42 +186,42 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="women-item-carousel">
-                    <div class="owl-women-item owl-carousel">
+                <div class="men-item-carousel">
+                    <div class="owl-item owl-carousel">
 
-                        {% for product in products %}
-                            {% if product.catagory == 'wahmen' %}
+                        {% for product  in products %}
+                        {% if product.category.title == 'men' and product.is_lattest %}
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="{% url 'core:product' product.id %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
-                                            </a></li>
-                                            <li><a href="{% url 'core:product' product.id %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-                                            </a></li>
-                                            <li><a href="{% url 'core:product' product.id %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
-                                            </a></li>
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{product.image.url}}" alt="{{product.name}}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{product.name}}</h4>
+                                        <span>${{product.price}}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
                                         </ul>
                                     </div>
-                                    <img src="{{product.image.url}}" alt="">
                                 </div>
-                                <div class="down-content">
-                                    <h4>{{product.name}}</h4>
-                                    <span>${{product.price}}</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            {% endif %}
+                        
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
@@ -231,16 +229,17 @@
         </div>
     </div>
 </section>
-<!-- ***** Women Area Ends ***** -->
+<!-- ***** just arrive Ends ***** -->
 
-<!-- ***** Kids Area Starts ***** -->
-<section class="section" id="kids">
+
+
+<!-- ***** viewed by others ***** -->
+<section class="section category" id="viewed_by_others">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Kid's Latest</h2>
-                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                    <h2>Viewed by others like you</h2>
                 </div>
             </div>
         </div>
@@ -248,41 +247,42 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="kid-item-carousel">
-                    <div class="owl-kid-item owl-carousel">
-                        {% for product in products %}
-                            {% if product.catagory == 'kid' %}
+                <div class="men-item-carousel">
+                    <div class="owl-item owl-carousel">
+
+                        {% for product  in products %}
+                        {% if product.category.title == 'men' and product.is_lattest %}
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="{% url 'core:product' product.id %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
-                                            </a></li>
-                                            <li><a href="{% url 'core:product' product.id %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-                                            </a></li>
-                                            <li><a href="{% url 'core:product' product.id %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
-                                            </a></li>
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{product.image.url}}" alt="{{product.name}}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{product.name}}</h4>
+                                        <span>${{product.price}}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
                                         </ul>
                                     </div>
-                                    <img src="{{product.image.url}}" alt="">
                                 </div>
-                                <div class="down-content">
-                                    <h4>{{product.name}}</h4>
-                                    <span>${{product.price}}</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            {% endif %}
+                        
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
@@ -290,7 +290,188 @@
         </div>
     </div>
 </section>
-<!-- ***** Kids Area Ends ***** -->
+<!-- ***** viewed by others ***** -->
+
+
+<!-- ***** featured barands***** -->
+<section class="section category" id="featured_barands">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Viewed by others like you</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="men-item-carousel">
+                    <div class="owl-item owl-carousel">
+
+                        {% for product  in products %}
+                        {% if product.category.title == 'men' and product.is_lattest %}
+                            <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{product.image.url}}" alt="{{product.name}}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{product.name}}</h4>
+                                        <span>${{product.price}}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** featured barands ***** -->
+
+
+<!-- ***** most viewed ***** -->
+<section class="section category" id="most_viewed">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Most viewed by shoppers like you</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="men-item-carousel">
+                    <div class="owl-item owl-carousel">
+
+                        {% for product  in products %}
+                        {% if product.category.title == 'men' and product.is_lattest %}
+                            <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{product.image.url}}" alt="{{product.name}}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{product.name}}</h4>
+                                        <span>${{product.price}}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** most viewed  ***** -->
+
+
+<!-- ***** most viewed ***** -->
+<section class="section category" id="top_category">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Top Categories</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="men-item-carousel">
+                    <div class="owl-item owl-carousel">
+
+                        {% for product  in products %}
+                        {% if product.category.title == 'men' and product.is_lattest %}
+                            <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                                </a></li>
+                                                <li><a href="{% url 'core:product' product.id %}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{product.image.url}}" alt="{{product.name}}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{product.name}}</h4>
+                                        <span>${{product.price}}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** most viewed  ***** -->
+
 
 <!-- ***** Explore Area Starts ***** -->
 <section class="section" id="explore">
@@ -321,12 +502,12 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="first-image">
-                                <img src="media/explore-image-01.jpg" alt="">
+                                <img src="/media/explore-image-01.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="second-image">
-                                <img src="media/explore-image-02.jpg" alt="">
+                                <img src="/media/explore-image-02.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -349,7 +530,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Social Media</h2>
+                    <h2>Social /media</h2>
                     <span>Details to details is what makes Hexashop different from the other themes.</span>
                 </div>
             </div>
@@ -365,7 +546,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="media/instagram-01.jpg" alt="">
+                    <img src="/media/instagram-01.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -376,7 +557,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="media/instagram-02.jpg" alt="">
+                    <img src="/media/instagram-02.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -387,7 +568,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="media/instagram-03.jpg" alt="">
+                    <img src="/media/instagram-03.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -398,7 +579,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="media/instagram-04.jpg" alt="">
+                    <img src="/media/instagram-04.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -409,7 +590,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="media/instagram-05.jpg" alt="">
+                    <img src="/media/instagram-05.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -420,7 +601,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="media/instagram-06.jpg" alt="">
+                    <img src="/media/instagram-06.jpg" alt="">
                 </div>
             </div>
         </div>

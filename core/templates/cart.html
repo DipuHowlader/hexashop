@@ -1,9 +1,72 @@
 {% extends 'base.html' %}
 {% block title %} <title>Hexashop - Cart</title> {% endblock title %}
+{% load static %}
 
 {% block content %}
 
-
+<div class="ckeckout">
+    <div class="container">
+        <div class="ckeckout-top">
+            <div class=" cart-items heading">
+                {% if carts %}
+                <h3>All Your Stuff ({{carts.count}})</h3>
+                <ul class="unit my-5">
+                    <li><span>Item</span></li>
+                    <li><span>Product Name</span></li>		
+                    <li><span>Unit Price</span></li>
+                    <li><span>Quantity</span></li>
+                    <li> <span>Total</span></li>
+                </ul>
+            {% endif %}
+            <div class="in-check" >
+                {% for item in carts %}
+                
+                    <ul class="cart-header">
+                        <div data-product = '{{item.id}}' class="delete"></div>
+                    </form>
+                        <li class="ring-in text-left"><a href="" ><img src="{{item.product.image.url}}" class="img-responsive cart-img" alt="product-img"></a>
+                        </li>
+                        <li><span>{{item.product.name}}</span></li>
+                        <li><span>$</span><span class='price'>{{item.product.price}}</span></li>
+                        <li class='cart'>
+                            <div class="c-btns">
+                                <img class='plus' data-product='{{item.id}}' src="/media/up.svg" alt="up">
+                                <img class='minus' data-product='{{item.id}}'  src="/media/up.svg" alt="down">
+                            </div>
+                            <span class='quantity'>{{item.quantity}}</span>
+                        </li>
+                        <li> <span>$</span> <span class='total'>{{ item.total }}</span></li>
+                </ul>
+                {% empty %}
+                    <p style='font-size:30px;text-align:center;'>you have no item in cart</p>
+                {% endfor %} 
+                
+                
+            </div>
+            </div>  
+            <div class="btns text-right">
+                <div class='main-border-button mb-3' >
+                    <a href="{% url 'core:products' %}">Continue Shopping</a>
+                </div>
+                {% if carts.count > 0 %}
+                       <div class='main-border-button' >
+                           <a href="{% url 'core:checkout' %}">Checkout</a>
+                       </div>
+                 {% endif %} 
+            
+            </div>
+         </div>
+    </div>
+</div>
 
 
 {% endblock content %}
+
+{% block scripts %}
+<script>
+    const csrftoken = '{{ csrf_token }}';
+    console.log('{{request.user}}')
+</script>
+    <script src="{% static 'js/cart.js' %}"></script>
+
+{% endblock scripts %}
